@@ -1,0 +1,12 @@
+class Solution(object):
+    def groupAnagrams(self, strs):
+        array2 = []
+        hashmap = {}
+        for i in strs:
+            word_sorted = ''.join(sorted(i))
+            if word_sorted not in hashmap:
+                hashmap[word_sorted] = []
+            hashmap[word_sorted].append(i) 
+        for values in hashmap.values():
+            array2.append(values)
+        return array2
