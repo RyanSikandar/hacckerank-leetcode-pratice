@@ -1,0 +1,11 @@
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        hashmap ={}
+        for i in nums:
+            if i in hashmap:
+                hashmap[i]+=1
+            else:
+                hashmap[i]=1
+        hashmap_sorted = sorted(hashmap.items(), key=lambda x:x[1],reverse=True)
+        result = [item[0] for item in hashmap_sorted[:k]]
+        return result     
